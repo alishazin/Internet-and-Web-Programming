@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- The doctype. When HTML was young (1991-1992), doctypes were meant to act as links to a set of rules that the HTML page had to follow to be considered good HTML.
+More recently, the doctype is a historical artifact that needs to be included for everything else to work right. <!DOCTYPE html> is the shortest string of 
+characters that counts as a valid doctype. -->
+
+<!-- Setting primary lang of the document -->
+<html lang="en-US>
+<head>
+
+	<!-- The head of an HTML document is the part that is not displayed in the web browser when the page is loaded. It specified stylesheet and other metadata -->
+	<!-- Specifying your document's character encoding -->	
+	<meta charset="utf-8" />
+	<!-- playing around with it -->
+	<!-- <meta charset="ISO-8859-1" /> -->
+
+	<!-- Adding an author and description -->
+	<meta name="author" content="Ali" />
+	<meta name="description" content="Learning purpose. Search engines will use me" />
+
+	<!-- Adding stylesheet -->
+	<link rel="stylesheet" href="style.css" />
+
+	<!-- Adding script. 'defer' instructs the browser to load the JavaScript after the page has finished parsing the HTML. -->
+	<script src="script.js" defer></script>
+
+	<title>Title</title>
+
+</head>
+<body>
+
+	<!-- Tags are case-insensitive. However, the convention and recommended practice is to write tags in lowercase. -->
+	<H1 style="color:red;">Hello World</H1>
+	<!-- An html element consist of opening tag, attributes, content and closing tage -->
+
+	<!--  <, >,",', and & are special characters. To use them as content, we use this thing -->
+	<p>&lt;, &gt;, &quot;, &apos;, &amp; are  special characters</p>
+
+	<!-- Adding Japanese, wont work with the other charset -->
+	<p> ご飯が熱い</p>
+
+</body>
+</html>
