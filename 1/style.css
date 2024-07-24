@@ -1,3 +1,47 @@
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+* {
+	box-sizing: content-box;
+	margin: 0;
+}
 p {
 	font-family: Verdana;
+	margin: 10px 0;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100vh;
+}
+h1 {
+	text-align: center;
+	margin: 2  0px 0;
+	font-family: Verdana;
+	padding-right: 5px;
+	position: relative;
+}
+h1 span {
+	animation-name: appear;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+h1 #cursor {
+	position: absolute;
+	right: 0;
+	top: 10%;
+	min-height: 80%;
+	width: 1px;
+	background-color: #717171;
+	animation-name: appear;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;	
+	animation-iteration-count: infinite;
 }
