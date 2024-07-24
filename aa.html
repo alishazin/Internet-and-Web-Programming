@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <style>
+        @keyframes roll {
+            from {
+                width: 0;
+            }
+            to {
+                width: 325px;
+            }
+        }
+        body {
+            min-height: 100vh;
+            background-color: #006892;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            position: relative;
+            width: 330px;
+            height: 80px;
+            background-color: #006892;
+            font-size: 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container .real {
+            text-align: center;
+            position: absolute;
+            width: fit-content;
+            height: fit-content;
+            z-index: 1;
+            font-weight: 800;
+            text-shadow: 0.5px 0.5px #00ffa3, -0.5px -0.5px #00ffa3;
+            color: #006892;
+        }
+        .container .overlay {
+            position: absolute;
+            z-index: 2;
+            text-align: center;
+            overflow: hidden;
+            text-wrap: nowrap;
+            height: fit-content;
+            font-weight: 800;
+            color: #00ffa3;
+            width: 0;
+            animation-name: roll;
+            animation-delay: 1s;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+        }
+        .border {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 80px;
+            width: 4px;
+            background-color: #f800ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="real">Hello World</div>
+        <div class="overlay">Hello World <div class="border"></div></div>
+    </div>
+</body>
+</html>
