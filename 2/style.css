@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+section.header {
+    position: relative;
+    min-height: 100vh;
+    background-color: rgb(179, 100, 35, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.header h1 {
+    font-family: 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+}
+.header h2 {
+    font-size: 25px;
+    font-family: system-ui;
+    font-weight: 300;
+}
+.contact-link {
+    position: absolute;
+    padding: 10px;
+    color: black;
+    border: 1px solid black;
+    right: 20px;
+    bottom: 20px;
+    transition: 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+}
+.contact-link:hover {
+    background-color: black;
+    color: white;
+}
+.copyright {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    color: rgb(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+section.expertise {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(179, 100, 35, 0.1);
+}
+
+section.expertise h3 {
+    font-size: 35px;
+    font-family: system-ui;
+    font-weight: 300;
+    margin: 40px 0;
+    margin-top: 80px;
+}
+
+.all-expertise {
+    margin: 40px 0 80px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.all-expertise .expertise-single {
+    width: 300px;
+    height: fit-content;
+    margin: 20px;
+}
+
+.all-expertise .expertise-single h4 {
+    font-size: 22px;
+    font-family: 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.all-expertise .expertise-single .sep {
+    margin: 15px 0;
+    height: 1px;
+    background: linear-gradient(to right, #ddd, transparent);
+}
+
+.all-expertise .expertise-single div.content {
+    font-family: 'Segoe UI';
+}
+
+section.footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: rgb(179, 100, 35, 0.4);
+    padding: 15px 15px;
+}
+
+section.footer a {
+    margin-left: 15px;
+}
+
+section.footer a i {
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+}
+
+section.footer a i:hover {
+    color: rgb(0, 0, 0, 0.6);
+    transform: translateY(-2px);
+}
