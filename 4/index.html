@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>My Map</title>
+	<style>
+		.location {
+			width: 100%;
+			height: 50vh;
+		}
+		.content {
+			height: fit-content;
+			width: 100%;
+		}
+		.content h1 {
+			font-size: 30px;
+		}
+		.content h2 {
+			font-size: 25px;
+			font-weight: 600;
+			margin: 50px auto;
+			width: fit-content;
+			text-decoration: underline;
+		}
+		.content p {
+			font-size: 16px;
+			font-family: Consolas;
+		}
+		.content .medias {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.content .medias img {
+			margin-bottom: 20px;
+			max-width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="location"></div>
+	<div class="content">
+		<h1></h1>
+		<p class="description"></p>
+		<h2>Click on a marker</h2>
+		<div class="medias">
+		</div>
+	</div>
+
+	<script>
+
+		const myHome = {
+			lat: 11.010370,
+			lng: 76.033328
+		};
+
+		const data = [
+			{
+				title: "My Home",
+				description: "This is my home, i have been living here for the past 9 years. It is located inside a gated community.",
+				images: [
+					"./media/home/img1.png",
+					"./media/home/img2.png",
+					"./media/home/img3.jpg",
+					"./media/home/img4.jpg",
+				],
+				markerDetails: {
+					position: myHome,
+					title: "My Home",
+					icon: "data:image/png;base64,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"
+				}
+			},
+			{
+				title: "Nearby Store",
+				description: "This is the store where i buy essential stuffs from. Its been there since my childhood.",
+				images: [
+					"./media/store/img1.png",
+					"./media/store/img2.png",
+				],
+				markerDetails: {
+					position: {lat: 11.009091107349136, lng: 76.03247462942923},
+					title: "Nearby Store",
+					icon: "https://cdn-icons-png.flaticon.com/512/8771/8771926.png"
+				}
+			},
+			{
+				title: "My School",
+				description: "This is where i studied until 10th standard. Its situated 2km away from my house.",
+				images: [
+					"./media/school/img1.png",
+					"./media/school/img2.png",
+				],
+				markerDetails: {
+					position: {lat: 11.005777997017491, lng: 76.01732252594},
+					title: "My School",
+					icon: "https://cdn-icons-png.freepik.com/256/8074/8074788.png?semt=ais_hybrid"
+				}
+			},
+			{
+				title: "Nearby Pond",
+				description: "I learned swimming from this pond. I always had a good time there with my friends.",
+				images: [
+					"./media/pond/img1.png",
+					"./media/pond/img2.png",
+				],
+				markerDetails: {
+					position: {lat: 11.009043225160815, lng: 76.04389389145697},
+					title: "Nearby Pond",
+					icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3raCxaz-QyXgGlp07Q39QvROCrgmIc3LQZQ&s"
+				}
+			},
+		]
+
+		function loadMap() {
+
+			let options = {
+				center: myHome,
+				zoom: 15,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+			}
+
+			let map = new google.maps.Map(document.querySelector(".location"), options);
+
+			for (let i=0; i<data.length; i++) {
+				const currData = data[i];
+				let marker = new google.maps.Marker({
+					...currData.markerDetails,
+					map: map,
+					icon: {
+						url: currData.markerDetails.icon,
+						scaledSize: new google.maps.Size(50, 50), // scaled size
+					}
+				})
+				google.maps.event.addListener(marker, 'click', function() {
+
+					const infowindow = new google.maps.InfoWindow({
+						content: currData.markerDetails.title
+					});
+					infowindow.open(map,marker);
+
+					const h1 = document.querySelector("h1")
+					const desc = document.querySelector("p.description")
+					const h2 = document.querySelector("h2")
+					const medias = document.querySelector(".medias")
+
+					h2.innerText = "IMAGES";
+					h1.innerText = currData.title;
+					desc.innerText = currData.description;
+
+					let html = ``;
+					for (let j=0; j<currData.images.length; j++) {
+						html += `<img src="${currData.images[j]}" />`
+					}
+					medias.innerHTML = html;
+
+				});
+			}
+
+		}
+
+	</script>
+	<script async defer src='https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=loadMap'></script>
+</body>
+
+</html>
