@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+div.content {
+    min-height: 100vh;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    background-color: white;
+    height: 70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #aaa;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+
+nav img.icon {
+    height: 30px;
+    margin-right: 15px;
+}
+
+nav img.text {
+    height: 30px;
+    transform: translateY(5px);
+}
+
+nav .time {
+    margin-left: auto;
+    font-family: monospace;
+    font-weight: 600;
+    letter-spacing: 8px;
+    font-size: 18px;
+}
+
+main {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+main .post-container {
+    width: 600px;
+    min-height: 100%;
+    max-height: fit-content;
+    background-color: #eee;
+    padding: 20px 2px;
+}
+
+.post-box {
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.post-box .top-bar {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.post-box .top-bar .profile {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-position: center;
+    margin-right: 15px;
+}
+
+.post-box .top-bar .acc-name {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.post-box .post {
+    width: 100%;
+}
