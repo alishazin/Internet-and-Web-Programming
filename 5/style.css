@@ -92,3 +92,16 @@ main .post-container {
 .post-box .post {
     width: 100%;
 }
+
+.post-box .bottom {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    padding: 10px 10px;
+}
+
+.post-box i {
+    margin-right: 10px;
+    cursor: pointer;
+}
