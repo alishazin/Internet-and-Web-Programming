@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script async src="script.js"></script>
+    <title>Job Application Form</title>
+</head>
+<body>
+    <main>
+        <h1>XYZ Industries</h1>
+        <h2>Application Form</h2>
+        <form onsubmit="return false;">
+            <div class="textfield">
+                <label for="full_name">Full Name</label>
+                <input type="text" name="full_name" id="full_name" minlength="3" maxlength="30" required>
+                <div class="err-msg"></div>
+            </div>
+            <div class="textfield">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" required>
+                <div class="err-msg"></div>
+            </div>
+            <div class="textfield contact">
+                <label for="contact">Contact Number</label>
+                <input type="text" name="contact" id="contact" minlength="10" maxlength="15" required>
+                <div class="err-msg"></div>
+            </div>
+            <div class="textfield">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" minlength="5" maxlength="50" required>
+                <div class="err-msg"></div>
+            </div>
+            <div class="textfield-container">
+                <div class="textfield half">
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city" minlength="3" maxlength="20" required>
+                    <div class="err-msg"></div>
+                </div>
+                <div class="textfield half zip">
+                    <label for="zip">Zip Code</label>
+                    <input type="text" name="zip" id="zip" minlength="3" maxlength="10" required>
+                    <div class="err-msg"></div>
+                </div>
+            </div>
+            <div class="textfield">
+                <label for="address">Upload Your CV (PDF)</label>
+                <input type="file" name="cv" id="cv" accept=".pdf" required>
+                <div class="err-msg"></div>
+            </div>
+            <input type="submit" value="Apply">
+        </form>
+    </main>
+</body>
+</html>
+
