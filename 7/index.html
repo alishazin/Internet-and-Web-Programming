@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preload" href="./img1.jpg" as="image">
+    <link rel="preload" href="./img2.jpg" as="image">
+    <link rel="preload" href="./img3.jpg" as="image">
+    <link rel="preload" href="./img4.jpg" as="image">
+    <link rel="preload" href="./img5.jpg" as="image">
+    <title>Slideshow</title>
+</head>
+<body>
+    <div class="img-container"></div>
+    <script>
+        const div = document.querySelector("div.img-container");
+        let count = 1;
+        setInterval(() => {            
+            div.style.animationName = `slideshow-${count}`
+            if (count === 6) count = 1
+            else count++
+        }, 5000)
+    </script>
+</body>
+</html>

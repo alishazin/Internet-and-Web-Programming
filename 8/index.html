@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>MCQ Quiz</title>
+    <script async src="./script.js"></script>
+</head>
+<body>
+    <div class="loading-box">
+        <div>Loading...</div>
+    </div>
+    <form class="options-container" style="display: none;" onsubmit="return false;">
+        <h1>Choose your preferences.</h1>
+        <div class="input-container">
+            <div class="label">Number of Questions</div>
+            <input type="number" name="amount" value="5" id="amount" min="5" max="20" required>
+        </div>
+        <div class="input-container">
+            <div class="label">Select Category</div>
+            <select name="category" id="category" required>
+                <option value="any">Any</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <div class="label">Select Difficulty</div>
+            <select name="difficulty" id="difficulty" required>
+                <option value="any">Any</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+
+        <button>Start Quiz</button>
+    </form>
+    <form class="questions-container" style="display: none;" onsubmit="return false;">
+
+    </form>
+    <div class="result-container" style="display: none;">
+
+    </div>
+</body>
+</html>
