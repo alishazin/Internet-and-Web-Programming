@@ -35,7 +35,6 @@ function loadCategoryOptions() {
             optionsContainer.style.display = 'block' 
         
             const parsedRes = JSON.parse(this.responseText)
-            console.log(parsedRes)
             
             parsedRes.trivia_categories.forEach(element => {
                 const option = document.createElement('option')
@@ -159,8 +158,6 @@ function quizSubmit(instance) {
     html += `<div class='points'>${instance === 1 ? 'You ran out of time!<br/>' : ''}You scored ${points} out of ${questions.length}</div><br/><br/><button onclick='refresh()'>New Quiz</button>`
 
     resultContainer.innerHTML = html;
-
-    console.log(points);
 
 }
 
