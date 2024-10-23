@@ -77,8 +77,9 @@ function submitOptions() {
 
             const parsedRes = JSON.parse(this.responseText)
 
-            let html = "<div id='timer'>Time left: <span>00:00</span></div>";
-            quizEndAt = new Date().getTime() + (parsedRes.results.length * 20000)
+            let html = "<div id='timer'>Time left: <span>00:00</span></div><div class='progress-bar'><div class='inner'></div></div>";
+            const totalTime = (parsedRes.results.length * 20000)
+            quizEndAt = new Date().getTime() + totalTime
 
             const timerInterval = setInterval(() => {
                 const msRemaining = quizEndAt - new Date().getTime()
@@ -87,7 +88,14 @@ function submitOptions() {
                     if (submitted === false)
                         quizSubmit(1)
                 } else {
-                    document.querySelector('div#timer span').innerHTML = `${affixZero(Math.floor(msRemaining / 60000))}:${affixZero(Math.floor((msRemaining % 60000) / 1000))}`
+                    if (submitted === true) clearInterval(timerInterval)
+                    else {
+                        document.querySelector('div#timer span').innerHTML = `${affixZero(Math.floor(msRemaining / 60000))}:${affixZero(Math.floor((msRemaining % 60000) / 1000))}`
+                        document.querySelector('.progress-bar .inner').style.width = `${(msRemaining/totalTime) * 100}%`
+                        if (msRemaining < (25 / 100) * totalTime) {
+                            document.querySelector('.progress-bar .inner').style.backgroundColor = 'red';
+                        }
+                    }
                 }
             }, 1000)
             
