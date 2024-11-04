@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoke Servlets</title>
+</head>
+<body>
+    <form action="http://localhost:8080/NameForm" method="GET">
+        <h1>Invoke Servlets Using GET Request</h1>
+        First Name: <input type="text" name="first_name">
+        <br /><br/>
+        Last Name: <input type="text" name="last_name" /><br/><br/>
+        <input type="submit" value="GET Request" />
+    </form>
+    <hr/>
+    <form action="http://localhost:8080/NameForm" method="POST">
+        <h1>Invoke Servlets Using POST Request</h1>
+        First Name: <input type="text" name="first_name">
+        <br /><br/>
+        Last Name: <input type="text" name="last_name" /><br/><br/>
+        <input type="submit" value="POST Request" />
+    </form>
+    <hr/>
+</body>
+</html>
