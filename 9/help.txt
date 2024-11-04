@@ -1,0 +1,14 @@
+Place the file "NameForm.class" to "C:\Program Files\Apache Software Foundation\Tomcat 11.0\webapps\ROOT\WEB-INF\classes" 
+
+Add the following tags inside <web-app> tag in "C:\Program Files\Apache Software Foundation\Tomcat 11.0\webapps\ROOT\WEB-INF\web.xml":
+    <servlet>
+        <servlet-name>NameForm</servlet-name>
+        <servlet-class>NameForm</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>NameForm</servlet-name>
+        <url-pattern>/NameForm</url-pattern>
+    </servlet-mapping>
+
+Thats it, now open the index.html
