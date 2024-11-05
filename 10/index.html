@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoke Servlets</title>
+</head>
+<body>
+    <form action="http://localhost:8080/DatabaseAccess" method="POST">
+        <h1>Insert A Record</h1>
+        Name: <input type="text" name="name">
+        <br /><br/>
+        Mark: <input type="number" name="mark" /><br/><br/>
+        <input type="submit" value="INSERT" />
+    </form>
+    <hr/>
+    <a href="http://localhost:8080/DatabaseAccess">See All Records</a>
+    <hr/>
+</body>
+</html>
