@@ -1,0 +1,361 @@
+:root {
+    --shadow-color: #929292;
+    --body-bg-color: #f0f0f0;
+    --theme-color: dodgerblue;
+    --light-text-color: #777777;
+    --light-header-color: #757575;
+    --separator-color: #e9e9e9;
+}
+* {
+    margin: 0;
+}
+body {
+    background-color: var(--body-bg-color);
+    font-family: Arial;
+}
+@keyframes slidermove {
+    from {width: 0%;}
+    to {width: 100%}
+}
+@keyframes imgtextslide {
+    from {bottom: 80px; opacity: 0;}
+    to {bottom: 20px; opacity: 1;}
+}
+.top {
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 1400px;
+    margin: 15px;
+    background-color: transparent;
+    display: flex;
+    align-items: flex-start;
+}
+.side {
+    flex-basis: 33%;
+    background-color: white;
+    border-radius: 7px 0 0 0;
+    margin-right: 10px;
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+.main {
+    flex-basis: 67%;
+    background-color: transparent;
+}
+.sideimgbox {
+    position: relative;
+}
+.sideimgbox img {
+    width: 100%;
+    border-radius: 7px 0 0 0;
+    /* inherited border radius */
+}
+.sideimgbox .overlay {
+    width: 100%;
+    position: absolute;
+    height: 60%;
+    background-image: linear-gradient(transparent, black);
+    bottom: 4px;
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+.sideimgbox:hover .overlay {
+    opacity: 1;
+}
+.sideimgbox span {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    font-size: 28px;
+    color: white;
+}
+.sideimgbox span {
+    animation-name: imgtextslide;
+    animation-duration: 1s;
+}
+.about, .skills, .languages {
+    padding: 15px 18px 12px 18px;
+}
+.about div {
+    font-size: 15px;
+    padding-left: 10px;
+    color: var(--light-text-color);
+    padding-bottom: 13px;
+    white-space: nowrap;
+}
+.about div i {
+    font-size: 19px;
+    color: var(--theme-color);
+    padding-right: 15px;
+}
+.separator {
+    width: 88%;
+    margin: auto;
+    height: 0.5px;
+    background-color: var(--separator-color);
+}
+.skills .header, .languages .header {
+    padding-left: 10px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    color: var(--light-header-color);
+    font-weight: bold;
+}
+.skills .header i, .languages .header i {
+    font-size: 19px;
+    color: var(--theme-color);
+    padding-right: 15px;
+}
+.skills p, .languages p {
+    color: var(--light-text-color);
+    padding-bottom: 15px;
+    padding-left: 5px;
+    font-size: 15px;
+}
+.sliderbg {
+    width: 100%;
+    height: 20px;
+    background-color: var(--body-bg-color);
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+.sliderdummy {
+    height: inherit;
+    border-radius: 20px;
+}
+.sliderfg {
+    height: inherit;
+    background-color: var(--theme-color);
+    border-radius: 20px;
+    position: relative;
+    transition: box-shadow 0.3s, background-color 0.3s;
+    width: 100%;
+}
+.sliderfg {
+    animation-name: slidermove;
+    animation-duration: 2s;
+}
+.sliderfg p {
+    position: absolute;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+    top: 12.5%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.sliderfg:hover {
+    box-shadow: 4px 0 8px var(--shadow-color);
+    background-color: #0080ff;
+}
+.sliderfg:hover p {
+    opacity: 1;
+}
+.maincontent {
+    width: 98%;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+.maincontent:first-child {
+    margin-bottom: 15px;
+    border-radius: 0 7px 0 0;
+}
+.maincontent .header {
+    padding: 30px 20px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    color: var(--light-header-color)
+}
+.maincontent .header i {
+    font-size: 35px;
+    color: var(--theme-color);
+    padding-right: 20px;
+}
+.maincontent .section {
+    padding: 30px 30px;
+}
+.maincontent .section h2 {
+    font-size: 18px;
+    color: var(--light-text-color);
+}
+.maincontent .section .date {
+    padding: 18px 0;
+    padding-left: 30px;
+    font-size: 15px;
+    color: var(--theme-color);
+    position: relative;
+}
+.maincontent .section .date i {
+    font-size: 18px;
+    color: var(--theme-color);
+    position: absolute;
+    bottom: 16px;
+    left: 0px;
+}
+.maincontent .section .date span {
+    padding: 5px;
+    background-color: var(--theme-color);
+    color: white;
+    border-radius: 5px;
+}
+.maincontent .section p {
+    color: black;
+    font-size: 15px;
+    line-height: 25px;
+}
+.footer {
+    background-image: linear-gradient(transparent, var(--theme-color) 60%);
+    padding: 35px;
+    padding-top: 70px;
+    box-sizing: border-box;
+}
+.footer p {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+}
+.footer p:first-child {
+    padding-top: 0;
+}
+.footer .icons {
+    text-align: center;
+}
+.footer .icons i {
+    font-size: 25px;
+    margin-right: 10px;
+    color: white;
+    transition: color 0.3s;
+}
+.footer .icons i:hover {
+    color: rgb(209, 209, 209);
+}
+.footer p a {
+    text-decoration: underline;
+    color: white;
+}
+.contactbox {
+    padding: 30px;
+    padding-left: 15px;
+    background-color: #ececec;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #444444;
+    margin-bottom: 20px;
+}
+.footer .inputbox {
+    display: flex;
+    margin-bottom: 15px;
+}
+.footer .inputbox:last-child {
+    margin-bottom: 0;
+}
+.footer .inputbox label {
+    flex-basis: 170px;
+    width: 100%;
+    position: relative;
+}
+.footer .inputbox label p {
+    position: absolute;
+    top: 9px;
+    color: black;
+    text-align: center;
+    font-size: 17px;
+}
+.footer .inputbox input, .footer .inputbox textarea {
+    width: 100%;
+    outline: none;
+    padding: 8px;
+    text-indent: 5px;
+    font-size: 15px;
+    border: 2px solid #c5c5c5;
+    border-radius: 7px;
+    box-sizing: border-box;
+    transition: border-color 0.5s, box-shadow 0.5s;
+}
+.footer .inputbox input:focus, .footer .inputbox textarea:focus {
+    border-color: var(--theme-color);
+    box-shadow: 0 0 10px var(--theme-color);
+}
+.footer .inputbox textarea {
+    height: 200px;
+    font-family: monospace;
+    padding: 15px 10px;
+    resize: none;
+}
+.footer .submitbutton {
+    position: relative;
+    height: 30px;
+}
+.footer .submitbutton button {
+    position: absolute;
+    right: 20px;
+    padding: 10px 0;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--theme-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+    cursor: pointer;
+}
+.footer .submitbutton button span {
+    font-size: 15px;
+    color: white;
+    transition: padding 0.5s;
+}
+.footer .submitbutton button span:after {
+    content: "\00bb";
+    position: absolute;
+    top: 6px;
+    opacity: 0;
+    font-size: 20px;
+    transition: opacity 0.3s, padding 0.5s;
+}
+.footer .submitbutton button:hover span:after {
+    opacity: 1;
+    padding-left: 5px;
+}
+.footer .submitbutton button:hover span {
+    padding-right: 18px;
+}
+.footer .submitbutton button:active {
+    background-color: #007efc;
+}
+@media (max-width:700px) {
+    .container {
+        flex-direction: column;
+    }
+    .side {
+        margin: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        border-radius: 0;
+    }
+    .sideimgbox img {
+        border-radius: 0;
+    }
+    .maincontent {
+        margin: 0;
+        width: 100%;
+    }
+    .maincontent:first-child {
+        border-radius: 0;
+    }
+    .contactbox {
+        padding: 30px;
+    }
+    .footer .inputbox {
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+    .footer .inputbox label {
+        flex-basis: 25px;
+    }
+    .footer .inputbox label p {
+        text-align: left;
+        top: -5px;
+        left: -22px;
+    }
+}
