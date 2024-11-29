@@ -2,13 +2,18 @@ Place the file "NameForm.class" at "\Tomcat 11.0\webapps\ROOT\WEB-INF\classes"
 
 Add the following tags inside <web-app> tag in "\Tomcat 11.0\webapps\ROOT\WEB-INF\web.xml":
     <servlet>
-        <servlet-name>NameForm</servlet-name>
-        <servlet-class>NameForm</servlet-class>
+        <servlet-name>AnyNameYouPrefer</servlet-name>
+        <servlet-class>{classfile without extension}</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>NameForm</servlet-name>
-        <url-pattern>/NameForm</url-pattern>
+        <servlet-name>SameNameAsAbove</servlet-name>
+        <url-pattern>/{url}</url-pattern>
     </servlet-mapping>
 
 Thats it, now open the index.html
+
+Use this to compile:
+javac -cp .;"C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/servlet-api.jar" NameForm.java
+
+For Tomcat 10 and newer, replace javax with jakarta

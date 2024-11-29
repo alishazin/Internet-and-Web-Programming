@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Tags</title>
+</head>
+<body>
+    <form id="f_text">
+        <fieldset>
+            <legend>Text</legend>
+            <label for="fname">First Name: </label>
+            <input type="text" list="names" id="fname" name="fname" minlength="5" maxlength="10" autocomplete="on" required>
+            <datalist id="names">
+                <option value="Ali">
+                <option value="Izzath">
+                <option value="Shazin">
+            </datalist>
+        </fieldset>
+        <br><input type="submit" value="Submit" >
+    </form><br>
+    
+    <!-- <form>
+        <fieldset>
+            <legend>Number</legend>
+            <label for="age">Age: </label>
+            <input type="number" id="age" name="fname" step="1" min="5" max="50" required>
+        </fieldset>
+        <br><input type="submit" value="Submit" >
+    </form><br> -->
+
+    <form id="f_range">
+        <fieldset>
+            <legend>Range</legend>
+            <label for="range_">Points: </label>
+            <input type="range" id="points" name="points" min="0" max="10" step="0.5" required>
+        </fieldset>
+        <br><input type="submit" value="Submit" >
+    </form><br>
+
+    <form id="f_date">
+        <fieldset>
+            <legend>Date</legend>
+            <label for="date1">Date: </label>
+            <input type="date" min="2024-11-24" max="2024-11-30" id="date1" name="date1" required>
+        </fieldset>
+        <br><input type="submit" value="Submit" >
+    </form><br>
+
+    <form id="f_datetime">
+        <fieldset>
+            <legend>Datetime</legend>
+            <label for="date2">Datetime: </label>
+            <input type="datetime-local" id="date2" name="date2" min="2024-11-24 05:00" max="2024-11-30 05:00" required>
+        </fieldset>
+        <br><input type="submit" value="Submit" >
+    </form><br>
+    
+    <form id="f_month">
+        <fieldset>
+            <legend>Month</legend>
+            <label for="month">Month: </label>
+            <input type="month" id="month" name="month" min="2024-01" max="2024-11" required>
+        </fieldset>
+        <br><input type="submit" value="Submit" >
+    </form><br> 
+
+    <form id="f_time">
+        <fieldset>
+            <legend>Time</legend>
+            <label for="time">Time: </label>
+            <input type="time" id="time" name="time" min="10:00" max="15:00" required>
+        </fieldset>
+        <br><input type="submit" value="Submit" >
+    </form><br> 
+
+    <form id="f_checkbox">
+        <fieldset>
+            <legend>Checkbox</legend>
+            <input type="checkbox" id="like_bike" name="like_bike" value="Bike">
+            <label for="month">I have a bike</label><br>
+        </fieldset>
+        <br><input type="submit" value="Submit" >
+    </form><br>
+
+    <form id="f_select">
+        <fieldset>
+            <legend>Select</legend>
+            <label for="team">Favourite Team: </label>
+            <select name="team" id="team" required>
+                <option value="" disabled selected>---- Select an option ----</option>
+                <option value="bar">Barcelona</option>
+                <option value="rma">Real Madrid</option>
+                <option value="fcb">Bayern</option>
+            </select>
+        </fieldset>
+        <br><input type="submit" value="Submit" >
+    </form><br> 
+
+    <form id="f_radio">
+        <fieldset>
+            <legend>Radio</legend>
+            <p>Favourite Team: </p>
+            <input type="radio" name="team_r" id="team_r1" value="bar" required>
+            <label for="team_r1">Barcelona</label><br>
+            <input type="radio" name="team_r" id="team_r2" value="rma">
+            <label for="team_r2">Real Madrid</label><br>
+            <input type="radio" name="team_r" id="team_r3" value="fcb">
+            <label for="team_r3">Bayern</label><br>
+        </fieldset>
+        <br><input type="submit" value="Submit" >
+    </form><br> 
+
+    <script defer src="script.js"></script>
+</body>
+</html>

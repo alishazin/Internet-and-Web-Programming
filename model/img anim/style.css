@@ -1,0 +1,166 @@
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoom-out {
+    from {
+        transform: scale(2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes combined {
+    from {
+        transform: translateX(-100%) scale(2);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shrink-rotate-expand {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(0.5) rotateZ(0deg);
+    }
+    50% {
+        transform: scale(0.5) rotateZ(180deg);
+    }
+    90% {
+        transform: scale(0.5) rotateZ(360deg);
+    }
+    100% {
+        transform: scale(1) rotateZ(360deg);
+    }
+}
+
+@keyframes flip {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes shower {
+    from {
+        background-position-y: 0%;
+    }
+    to {
+        background-position-y: 200%;
+    }
+}
+
+@keyframes shimmer {
+    from {
+        background-position-x: 300%
+    }
+    to {
+        background-position-x: 0%
+    }
+}
+
+div.container {
+    margin: 0 auto 30px;
+    width: 350px;
+    height: 250px;
+    border: 1px solid black;
+    overflow: hidden;
+    position: relative;
+}
+
+div.container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#anim1 img {
+    animation-name: slide-in;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+}
+
+#anim2 img {
+    animation-name: fade-in;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+}
+
+#anim3 img {
+    animation-name: zoom-out;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+}
+
+#anim4 img {
+    animation-name: combined;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+}
+
+#anim5 img {
+    animation-name: shrink-rotate-expand;
+    animation-iteration-count: 1;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#anim6 img {
+    animation-name: flip;
+    animation-iteration-count: 2;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+#anim7 .content {
+    margin: auto;
+    width: 100px;
+    height: 100%;
+    clip-path: polygon(40% 0%, 60% 0%, 100% 100%, 0% 100%);
+    background: linear-gradient(to bottom, 
+        rgb(255, 255, 255, 0.1), rgb(255, 255, 255, 0.3) 10%, 
+        rgb(255,255,255,0.6) 30%, rgb(255,255,255,0.6) 70%, 
+        rgb(255, 255, 255, 0.3) 90%, rgb(255, 255, 255, 0.1)
+    );
+    background-repeat: repeat-y;
+    background-size: 100% 50%;
+    animation-name: shower;
+    animation-iteration-count: infinite;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+}
+
+#anim8 {
+    background: linear-gradient(-45deg, rgb(0,0,0,0.05) 40%, #fff 50%, rgb(0,0,0,0.05) 60%);
+    background-size: 300%;
+    background-position-x: 300%;
+    animation: shimmer 3s infinite linear;
+}

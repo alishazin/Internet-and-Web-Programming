@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <h1>Maps With Hotspots</h1>
+
+    <img src="map.jpeg" alt="map" usemap="#map1" width="800" height="379">
+
+    <map name="map1">
+        <area style="cursor: pointer;" shape="rect" coords="280,70,315,120" alt="Property 1" onclick="display(1)">
+        <area style="cursor: pointer;" shape="rect" coords="135,200,160,250" alt="Property 1" onclick="display(2)">
+        <area style="cursor: pointer;" shape="rect" coords="695,200,725,245" alt="Property 1" onclick="display(3)">
+    </map>
+
+    <div class="container" style="padding: 20px;margin-top: 30px;border: 1px solid black;">
+        <h2></h2>
+        <p></p>
+    </div>
+
+    <script>
+
+        const propertyDetails = [
+            {title: "Villa 1", description: "3 BHK, 35,000 per month"},
+            {title: "Villa 2", description: "2 BHK, 20,000 per month"},
+            {title: "Villa 3", description: "2 BHK, Not available for rent!"},
+        ]
+
+        function display(num) {            
+            document.querySelector("div.container h2").innerText = propertyDetails[num-1].title
+            document.querySelector("div.container p").innerText = propertyDetails[num-1].description
+        }
+    </script>
+</body>
+</html>

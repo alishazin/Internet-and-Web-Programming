@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #container {
+            position: relative;
+        }
+        .dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Image Maps</h2>
+<p>Click on the computer, the phone, or the cup of coffee to go to a new page and read more about the topic:</p>
+
+<div id="container">
+    <div class="dot" style="left:34px;top:44px;"></div>
+    <div class="dot" style="left:270px;top:350px;"></div>
+    <div class="dot" style="left:290px;top:172px;"></div>
+    <div class="dot" style="left:333px;top:250px;"></div>
+    <div class="dot" style="left:calc(337px - 44px);top:calc(300px - 44px);width:88px;height:88px;"></div>
+    <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+</div>
+
+<map name="workmap">
+    <area style="cursor: pointer;" shape="rect" coords="34,44,270,350" alt="Computer" onclick="click1()">
+    <area style="cursor: pointer;" shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+    <area style="cursor: pointer;" shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+</map>
+
+<script>
+    function click1() {
+        console.log(1000);
+    }
+</script>
+
+</body>
+</html>
+

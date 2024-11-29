@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        .correct {
+            color: green;   
+        }
+        .wrong {
+            color: red;   
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <p class="time-left"></p>
+    <form></form>
+    <script>
+
+        var data = [
+            {
+                question: "Which is the best club in the world?",
+                options: [
+                    "Barcelona", "Real Madrid", "Manchested Utd", "Manchester City"
+                ],
+                ans: "Barcelona"
+            },
+            {
+                question: "Which is the worst club in the world?",
+                options: [
+                    "Barcelona", "Real Madrid", "Manchested Utd", "Manchester City"
+                ],
+                ans: "Real Madrid"
+            },
+        ];
+        var submitted = false;
+        var startTimestamp = null;
+
+        function loadQuestions() {
+
+            const form = document.querySelector("form")
+
+            data.forEach((element, index) => {
+                form.innerHTML += `
+                <br><p>${index+1}. ${element.question}</p>
+                `
+                let _index = 0;
+                for (option of element.options) {
+                    form.innerHTML += `
+                    <input type='radio' name='q${index}' id='q${index}${_index}' value='${option}' required'>
+                    <label for='q${index}${_index}'>${option}</label><br>
+                    `
+                    _index++;
+                }
+            })
+
+            form.innerHTML += `
+            <br><br><input type='submit' value='Submit'>
+            `
+
+            startTimestamp = new Date().getTime()
+
+            const interval = setInterval(() => {
+
+                const div = document.querySelector("p.time-left")
+                const secLeft = 10 - Math.floor((new Date().getTime() - startTimestamp) / 1000)
+
+                if (secLeft <= 0) {
+                    div.innerHTML = `You ran out of time!`;
+                    submit()
+                    clearInterval(interval)
+
+                } else {
+                    div.innerHTML = `
+                    Time Left: ${affixZero(Math.floor(secLeft/60))}:${affixZero(Math.floor(secLeft%60))}
+                    `;
+                }
+
+            }, 1000)
+            
+        }
+
+        function affixZero(num) {
+            if (num <= 9) return `0${num}`
+            else return num.toString()
+        }
+
+        function submit() {
+
+            let score = 0;
+            const div = document.querySelector("p.time-left")
+            const form = document.querySelector("form")
+            if (div.innerHTML !== 'You ran out of time!') {
+                div.innerHTML = 'Submitted';
+            }
+            let newContent = '';
+
+            data.forEach((element, index) => {
+
+                const selected = document.querySelector(`input[type='radio'][name='q${index}']:checked`)
+                
+                if (selected !== null && selected.value === element.ans) {
+                    score++;
+                    newContent += `
+                    <br><br><p>${index+1}. ${element.question}</p><div class='correct'>${element.ans}</div>
+                    `     
+                } else {
+                    newContent += `
+                    <p>${index+1}. ${element.question}</p><div class='wrong'>Your Ans: ${selected !== null ? selected.value : ''}</div><br>
+                    <div class='correct'>Correct Ans: ${element.ans}</div>
+                    `
+                }
+
+            })
+
+            newContent += `
+            <hr><p>Final Score: ${score} out of ${data.length}</p>
+            `
+
+            form.innerHTML = newContent;
+
+        }
+
+        document.querySelector("form").onsubmit = (e) => {
+            e.preventDefault()
+            submit()
+        }
+
+        loadQuestions()
+
+    </script>
+</body>
+</html>

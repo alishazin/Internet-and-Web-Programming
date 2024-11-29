@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Time table</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=devide-width, initial-scale=1">
+	<style>
+		caption {
+			color: red;
+		}
+		table {
+			width: 100%;
+			border: 3px dotted black;
+			border-spacing: 20px;
+		}
+		th {
+			border: 2px dashed black;
+		}
+		td {
+			text-align: center;
+			border: 1px solid black;
+			border-spacing: 40px;
+		}
+		.first {
+			background-color: red;
+		}
+		.break {
+			background-color: yellow;
+		}
+		.last {
+			background-color: blue;
+		}
+		/*tr:nth-child(even) {
+			color: pink;
+		}*/
+	</style>
+</head>
+<body>
+	<table>
+		<caption>Time table 2024-25</caption>
+		<colgroup>
+			<col span="1" class="first">
+			<col span="1" class="break">
+			<col span="1" class="last">
+		</colgroup>
+		<tr>
+			<th>9:30 - 12:30</th>
+			<th>12:30 - 13:30</th>
+			<th>13:30 - 15:30</th>
+		</tr>
+		<tr>
+			<td>First Period</td>
+			<td rowspan="3">Break</td>
+			<td>First Period</td>
+		</tr>
+		<tr>
+			<td>First Period</td>
+			<td>First Period</td>
+		</tr>
+		<tr>
+			<td>First Period</td>
+			<td>First Period</td>
+		</tr>
+	</table>
+</body>
+</html>
